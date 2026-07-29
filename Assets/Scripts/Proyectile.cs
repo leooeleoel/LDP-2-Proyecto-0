@@ -3,8 +3,9 @@ using UnityEngine;
 public class Proyectile : MonoBehaviour
 {
     public float speed = 10f;
-    public float force = 10f;
+    public float force = 500f;
     public float lifeTime = 2f;
+    public int damage = 20;
 
     private Rigidbody2D rb;
 
@@ -16,20 +17,25 @@ public class Proyectile : MonoBehaviour
         Destroy(gameObject, lifeTime);
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Player"))
+        Debug.Log("CHOQUE CON: " + collision.gameObject.name);
+
+        if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerController player = collision.GetComponent<PlayerController>();
+            Debug.Log("IMPACTÓ AL PLAYER");
+
+            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
 
             if (player != null)
             {
+                // Dirección del empuje
                 Vector2 knockbackDirection =
                     (collision.transform.position - transform.position).normalized;
 
-                knockbackDirection.y = 0;
-
                 player.KnockBack(knockbackDirection, force);
+
+                player.TakeDamage(damage);
             }
 
             Destroy(gameObject);

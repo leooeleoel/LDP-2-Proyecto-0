@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5836767772692298973}
   - component: {fileID: 2528737877957491085}
   - component: {fileID: 1333767331931949963}
+  - component: {fileID: -3857931620238901339}
+  - component: {fileID: 6973067879903549224}
   m_Layer: 0
   m_Name: Plataforma (1)
   m_TagString: Untagged
@@ -139,3 +141,29 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 5.2, y: 0.94}
   m_EdgeRadius: 0
+--- !u!114 &-3857931620238901339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219781080741634766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a826a375719557448acb9c1a79914e59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformDestroyer
+  destroyX: -20
+--- !u!114 &6973067879903549224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219781080741634766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38bf7ce800b441142899db919d48e49e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlatformMovement
+  speed: 10

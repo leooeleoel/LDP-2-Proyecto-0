@@ -2,14 +2,20 @@ using UnityEngine;
 
 public class HealthPack : MonoBehaviour
 {
+    public int healAmount = 20;
+
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("TOCADO");
-
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("DESTRUYENDO");
-            Destroy(this.gameObject, 0.1f);
+            PlayerController player = collision.GetComponent<PlayerController>();
+
+            if (player != null)
+            {
+                player.Heal(healAmount);
+            }
+
+            Destroy(gameObject);
         }
     }
 }

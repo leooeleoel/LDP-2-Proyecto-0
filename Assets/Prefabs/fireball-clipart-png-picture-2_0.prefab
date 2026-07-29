@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb9e68e044701f346829fa6d6e194b56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Proyectile
-  speed: 15
-  force: 10
-  lifeTime: 1
+  speed: 20
+  force: 75
+  lifeTime: 3
+  damage: 15
